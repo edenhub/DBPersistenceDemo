@@ -12,7 +12,8 @@ import org.glassfish.jersey.server.mvc.freemarker.FreemarkerMvcFeature;
 public class MyApplicationConfig extends ResourceConfig {
 
     public MyApplicationConfig(){
-        super(new Class<?>[]{MyTemplate.class, MyResource.class});
+        packages(true,new String[]{"Begin","Template"});
+//        super(new Class<?>[]{MyTemplate.class, MyResource.class});
         register(LoggingFilter.class);
         register(FreemarkerMvcFeature.class);
     }
