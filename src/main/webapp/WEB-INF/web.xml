@@ -17,14 +17,34 @@
             <param-value>Template</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
-        <!--<init-param>-->
-            <!--<param-name>jersey.config.server.provider.scanning.recursive</param-name>-->
-            <!--<param-value>false</param-value>-->
-        <!--</init-param>-->
-        <!--<load-on-startup>1</load-on-startup>-->
     </servlet>
     <servlet-mapping>
         <servlet-name>Jersey Web Application</servlet-name>
         <url-pattern>/webapi/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>baseServlet</servlet-name>
+        <servlet-class>persistenceDemo.Server.Servlet.BaseServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>baseServlet</servlet-name>
+        <url-pattern>/server/base</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>addServlet</servlet-name>
+        <servlet-class>persistenceDemo.Server.Servlet.AddActionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>addServlet</servlet-name>
+        <url-pattern>/server/add</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>summitServlet</servlet-name>
+        <servlet-class>persistenceDemo.Server.Servlet.SummitActionServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>summitServlet</servlet-name>
+        <url-pattern>/server/summit</url-pattern>
     </servlet-mapping>
 </web-app>
