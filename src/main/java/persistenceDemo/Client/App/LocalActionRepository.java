@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by lab on 2014/12/3.
  */
 public class LocalActionRepository {
-    private  Map<String,String> actionRepository = new HashMap<>(100);
+    private  Map<String,String> actionRepository = new ConcurrentHashMap<>(100);
     private static LocalActionRepository instance = new LocalActionRepository();
 
     private LocalActionRepository(){}
