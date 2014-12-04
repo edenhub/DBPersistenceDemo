@@ -1,5 +1,6 @@
 package persistenceDemo.Client.App;
 
+import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -7,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
  * Created by lab on 2014/12/3.
  */
 public class LocalActionRepository {
-    private static Map<String,String> actionRepository = new ConcurrentHashMap<>(100);
+    private  Map<String,String> actionRepository = new HashMap<>(100);
     private static LocalActionRepository instance = new LocalActionRepository();
 
     private LocalActionRepository(){}
@@ -27,7 +28,7 @@ public class LocalActionRepository {
         return actionRepository.get(actionId);
     }
 
-    public static void dumpRepository(){
+    public  void dumpRepository(){
         System.out.println(actionRepository.size());
         for(Map.Entry<String,String> e : actionRepository.entrySet()){
             System.out.println(e.getKey()+" : "+e.getValue());

@@ -13,6 +13,7 @@ import javax.ws.rs.client.WebTarget;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  * Created by lab on 2014/12/3.
@@ -43,5 +44,8 @@ public class SummitActionServlet extends HttpServlet {
         Response resp = webTarget.request().post(Entity.entity(formBean, MediaType.APPLICATION_XML));
         Boolean result = resp.readEntity(Boolean.class);
         System.out.println("summit : "+result);
+        PrintWriter writer = response.getWriter();
+        writer.write("summit : "+result);
+        writer.flush();
     }
 }

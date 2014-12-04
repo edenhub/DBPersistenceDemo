@@ -48,7 +48,8 @@ public class ClientApp {
         String localActionId = "001";
         LocalActionRepository localActionRepository = LocalActionRepository.getInstance();
         localActionRepository.registAction(localActionId,userAction.getName());
-        LocalActionRepository.dumpRepository();
+        localActionRepository.dumpRepository();
+        System.out.println("Client : "+localActionRepository);
         return localActionId;
     }
 
